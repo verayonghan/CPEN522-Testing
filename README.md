@@ -3,7 +3,6 @@ Group22 - Yonghan Zhou 93506160
 jpacman-framework
 =================
 
-zsh:1: command not found: q
 
 Parts of the code are well tested, whereas others are left untested intentionally.
 As a student in software testing, you can extend the test suite, or use the framework to build extensions in a test-driven way.
