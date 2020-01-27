@@ -97,4 +97,27 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 		// then
 		assertFalse(getPlayer().isAlive());
 	}
+	
+	
+	/**
+	 * Test that the ghost cannot keep moving and will stay at the edge when it hits the wall.
+	 */
+
+	@Test
+	public void test_GhostHitWall() {
+		// given
+		getEngine().start();
+		// when
+		getUI().getGame().moveGhost(theGhost(), Direction.DOWN);		
+		// then
+		assertEquals(emptyTile, theGhost().getTile());
+		
+		// test if the ghost keep staying at the emptyTile
+		for (int i = 0; i < 20000; i++) {
+			assertEquals(emptyTile, theGhost().getTile());
+		}
+		
+		
+	}
+
 }
