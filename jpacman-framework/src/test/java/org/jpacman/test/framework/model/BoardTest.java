@@ -107,6 +107,7 @@ public class BoardTest {
 	 */
 	@Test
 	public void testWithinBorders() {
+		assertTrue(board.withinBorders(0, 0));
 		assertFalse(board.withinBorders(WIDTH, HEIGHT));
 	}
 	
@@ -202,5 +203,6 @@ public class BoardTest {
 		Tile desired = board.tileAt(x+1, y);
 		assertEquals(actual,desired);
 	}
+	
 }
 

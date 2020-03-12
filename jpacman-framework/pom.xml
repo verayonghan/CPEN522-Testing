@@ -49,8 +49,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 
@@ -171,27 +171,30 @@
 			</plugin>
 
 			<plugin>
-				<!-- invoke with 
+				<!-- invoke with h
 				     mvn org.pitest:pitest-maven:mutationCoverage
 				-->
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
-				<version>0.28</version>
+				<version>1.2.0</version>
 				<configuration>
-					<targetClasses>
+					<targetClasses><param>org.jpacman.framework.*</param></targetClasses>
+					<targetTests><param>org.jpacman.test.framework.*</param></targetTests>
+				
+<!--  					<targetClasses>
 						<param>org.jpacman.framework.factory.DefaultGameFactory</param>
 						<param>org.jpacman.framework.model.Sprite</param>
 						<param>org.jpacman.framework.model.Board</param>
 						<param>org.jpacman.framework.model.PointManager</param>
 						<param>org.jpacman.framework.model.Game</param>
-					</targetClasses>
-					<targetTests>
+					</targetClasses>k
+ 					<targetTests>
 						<param>org.jpacman.test.framework.factory.FactoryIntegrationTest</param>
 						<param>org.jpacman.test.framework.model.SpriteTest</param>
 						<param>org.jpacman.test.framework.model.PointManagerTest</param>
 						<param>org.jpacman.test.framework.model.BoardTileAtTest</param>
 						<param>org.jpacman.test.framework.model.GameTest</param>
-					</targetTests>
+					</targetTests>  -->
 					<excludedMethods>
 						<!-- methods called invariant are only used for assertion checking. -->
 						<param>*nvariant*</param>
@@ -205,6 +208,20 @@
 					<jvmArgs>
 						<value>-enableassertions</value>
 					</jvmArgs>
+					<mutators>
+						<mutator>CONDITIONALS_BOUNDARY</mutator>
+						<mutator>INCREMENTS</mutator>
+						<mutator>INVERT_NEGS</mutator>
+						<mutator>MATH</mutator>
+						<mutator>NEGATE_CONDITIONALS</mutator>
+						<mutator>RETURN_VALS</mutator>
+						<mutator>VOID_METHOD_CALLS</mutator>
+						
+           				<mutator>CONSTRUCTOR_CALLS</mutator>
+        				<mutator>INLINE_CONSTS</mutator>
+        				<mutator>REMOVE_INCREMENTS</mutator>
+        				<mutator>REMOVE_CONDITIONALS_EQ_IF</mutator>
+   		 			</mutators>
 				</configuration>
 			</plugin>
 
