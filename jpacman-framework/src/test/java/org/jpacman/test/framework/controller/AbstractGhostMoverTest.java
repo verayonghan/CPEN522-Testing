@@ -17,6 +17,7 @@ import org.junit.Test;
 public class AbstractGhostMoverTest {
 	
 	//3.5
+	
 	@Test
 	public void testAbstractGhostMover() throws FactoryException {
 		MapParser p = new MapParser(new DefaultGameFactory());
@@ -31,7 +32,6 @@ public class AbstractGhostMoverTest {
 			fail("Unexpected Exception");
 		}
 		
-		
 		ActionEvent ae = new ActionEvent("", 0, null);
 		
 		try {
@@ -39,9 +39,5 @@ public class AbstractGhostMoverTest {
 		} catch (Exception e) {
 			fail("Unexpected Exception");
 		}
-		
 	}
-	
-	
-
 }

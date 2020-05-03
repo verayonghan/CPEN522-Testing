@@ -75,7 +75,7 @@ public class ButtonPanel extends JPanel implements Observer {
         setName("jpacman.buttonPanel");
         addButton(startButton);
         addButton(stopButton);
-        addButton(exitButton);       
+//        addButton(exitButton);       
      }
     
     /**

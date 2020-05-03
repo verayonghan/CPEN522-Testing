@@ -90,9 +90,6 @@ public class FactoryIntegrationTest {
 	
 	//3.5
 	
-	
-	
-	
 	private final String[] invalidMap = new String[] {"A"};
 	
 	/**

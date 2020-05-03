@@ -29,7 +29,7 @@ public class ButtonPanelTest {
 
 	/**
 	 * Smoke test that merely creates the panel.
-//	 */
+	 */
 	@Test
 	public void buttonPanelSmokeTest() {
 		JFrame jf = new JFrame();
@@ -43,7 +43,6 @@ public class ButtonPanelTest {
 	
 	
 	//3.5
-	
 	
 	/**
 	 * Test the initialize() method
@@ -71,7 +70,6 @@ public class ButtonPanelTest {
 	}
 	
 
-	
 	@Test
 	public void testButtonPanelActions() {
 		MainUI ui = new MainUI();
@@ -87,7 +85,7 @@ public class ButtonPanelTest {
 		} catch (FactoryException e) {
 			fail("Unexpected FactoryException");
 		}
-
 	}
+	
 	
 }

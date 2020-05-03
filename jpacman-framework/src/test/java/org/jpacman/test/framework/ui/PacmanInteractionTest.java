@@ -20,22 +20,19 @@ import org.junit.Test;
 public class PacmanInteractionTest {
 	
 	//3.5
-	
 	@Test
 	public void testMatchState() throws FactoryException, InterruptedException {
 		MainUI ui = new MainUI();
 		ui.initialize();
 		ui.start();
-		
 		PacmanInteraction pi = ui.eventHandler();
-		
+	
 		assertEquals(pi.getCurrentState().toString(),"PAUSING");
 		pi.start();
 		assertEquals(pi.getCurrentState().toString(),"PLAYING");
 		pi.stop();
 		assertEquals(pi.getCurrentState().toString(),"PAUSING");
 		pi.start();
-		
 		
 		Game g = (Game)ui.getGame(); 
 		Player p = g.getPlayer();
@@ -45,20 +42,13 @@ public class PacmanInteractionTest {
 		
 		pi.right();
 		pi.up();
-		
 		assertEquals(x+1, p.getTile().getX());
 		assertEquals(y-1, p.getTile().getY());
-		
-		
 		
 		p.die();
 		pi.updateState();
 		assertEquals(pi.getCurrentState().toString(),"LOST");
-		
 		pi.exit();
 		assertNotEquals(pi.getCurrentState().toString(),"PAUSING");
-		
-
-	
 	}       
 }
